@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BaseViewChoose" customModule="Money_Manager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="112"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZq-20-G1r">
+                    <rect key="frame" x="179" y="49.5" width="28.5" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8i-r1-33o">
+                    <rect key="frame" x="0.0" y="110" width="386" height="2"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="Wt8-BP-4BJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.19215686269999999" green="0.49803921569999998" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Y8i-r1-33o" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0du-27-Bdi"/>
+                <constraint firstItem="EZq-20-G1r" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bTL-vY-l5k"/>
+                <constraint firstAttribute="trailing" secondItem="Y8i-r1-33o" secondAttribute="trailing" id="cpI-83-PHh"/>
+                <constraint firstItem="EZq-20-G1r" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gA3-QF-NKT"/>
+                <constraint firstAttribute="bottom" secondItem="Y8i-r1-33o" secondAttribute="bottom" id="q2l-pP-dXj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lblTitle" destination="EZq-20-G1r" id="1op-Ai-Qd5"/>
+                <outlet property="lightView" destination="Y8i-r1-33o" id="wK1-1f-htM"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="-287"/>
+        </view>
+    </objects>
+</document>

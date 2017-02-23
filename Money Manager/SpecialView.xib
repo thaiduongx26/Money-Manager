@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SpecialView" customModule="Money_Manager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="469" height="295"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xld-bj-cRU">
+                    <rect key="frame" x="0.0" y="0.0" width="469" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPi-R2-0GJ">
+                            <rect key="frame" x="10" y="3" width="28.5" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txE-D3-9NJ">
+                            <rect key="frame" x="439" y="5" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="txE-D3-9NJ" secondAttribute="height" multiplier="1:1" id="x3U-p6-5oX"/>
+                            </constraints>
+                            <state key="normal" image="ic_clear_white_18dp"/>
+                            <connections>
+                                <action selector="closeButtonDidTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ktr-qm-hZY"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQE-wT-Q6k">
+                            <rect key="frame" x="404" y="5" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="DQE-wT-Q6k" secondAttribute="height" id="NLd-1f-eO7"/>
+                            </constraints>
+                            <state key="normal" image="ic_mode_edit_white_18dp"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.14742490649223328" green="0.19579151272773743" blue="0.2209104597568512" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="oPi-R2-0GJ" firstAttribute="top" secondItem="xld-bj-cRU" secondAttribute="top" constant="3" id="Hu0-No-7KR"/>
+                        <constraint firstItem="oPi-R2-0GJ" firstAttribute="leading" secondItem="xld-bj-cRU" secondAttribute="leading" constant="10" id="O6P-0j-CXy"/>
+                        <constraint firstItem="DQE-wT-Q6k" firstAttribute="top" secondItem="xld-bj-cRU" secondAttribute="top" constant="5" id="Qen-Xt-iN6"/>
+                        <constraint firstAttribute="bottom" secondItem="txE-D3-9NJ" secondAttribute="bottom" constant="5" id="dDS-rz-6wg"/>
+                        <constraint firstAttribute="height" constant="30" id="fqd-sF-Oza"/>
+                        <constraint firstItem="txE-D3-9NJ" firstAttribute="leading" secondItem="DQE-wT-Q6k" secondAttribute="trailing" constant="15" id="heC-0W-WvD"/>
+                        <constraint firstAttribute="bottom" secondItem="DQE-wT-Q6k" secondAttribute="bottom" constant="5" id="oyu-YE-USD"/>
+                        <constraint firstAttribute="trailing" secondItem="txE-D3-9NJ" secondAttribute="trailing" constant="10" id="v40-t0-FYa"/>
+                        <constraint firstAttribute="bottom" secondItem="oPi-R2-0GJ" secondAttribute="bottom" constant="3" id="voa-BK-uVX"/>
+                        <constraint firstItem="txE-D3-9NJ" firstAttribute="top" secondItem="xld-bj-cRU" secondAttribute="top" constant="5" id="vyP-22-C6o"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="xld-bj-cRU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Ia-kW-OnW"/>
+                <constraint firstItem="xld-bj-cRU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AI0-Ei-5RM"/>
+                <constraint firstAttribute="trailing" secondItem="xld-bj-cRU" secondAttribute="trailing" id="qDi-kY-h3s"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="closeButton" destination="txE-D3-9NJ" id="9BV-Ji-T5l"/>
+                <outlet property="lblTitle" destination="oPi-R2-0GJ" id="j2p-we-15E"/>
+                <outlet property="titleView" destination="xld-bj-cRU" id="EH6-Bg-ClD"/>
+            </connections>
+            <point key="canvasLocation" x="131.5" y="-61.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_clear_white_18dp" width="27" height="27"/>
+        <image name="ic_mode_edit_white_18dp" width="27" height="27"/>
+    </resources>
+</document>
