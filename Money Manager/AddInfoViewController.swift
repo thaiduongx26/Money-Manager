@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 protocol addInfo {
     func sendType(type: String)
     func sendData(name: String, index: String)
@@ -29,7 +28,8 @@ class AddInfoViewController: UIViewController , UITextViewDelegate , addInfo{
         self.fillDataIndex(name: type)
     }
     
-    @IBOutlet weak var contactTextView: UITextView!
+    @IBOutlet var contactTextField: MultiAutoCompleteTextField!
+    
     @IBOutlet weak var memoTextView: UITextView!
     
     @IBOutlet var formView: UIView!
@@ -82,14 +82,19 @@ class AddInfoViewController: UIViewController , UITextViewDelegate , addInfo{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.setNeedsDisplay()
+        
+        
+        
         self.hideKeyboardWhenTappedAround()
         self.setupBase()
         self.setupViewToShow()
         self.memoTextView.textColor = UIColor.gray
-        self.contactTextView.textColor = UIColor.gray
+        self.contactTextField.textColor = UIColor.gray
         self.memoTextView.font = UIFont.systemFont(ofSize: 11)
-        self.contactTextView.font = UIFont.systemFont(ofSize: 11)
+        self.contactTextField.font = UIFont.systemFont(ofSize: 11)
         self.continueForm()
+        let word = ["ngoc","duong","fuck"]
+        contactTextField.autoCompleteStrings = word
         // Do any additional setup after loading the view.
     }
     
@@ -304,7 +309,7 @@ class AddInfoViewController: UIViewController , UITextViewDelegate , addInfo{
             record.account = arrFormView[1].lblTitle.text!
             record.category = arrFormView[2].lblTitle.text!
             record.amount = arrFormView[3].lblTitle.text!
-            record.content = self.contactTextView.text!
+            record.content = self.contactTextField.text!
             record.memo = self.memoTextView.text!
             DB.share().saveRecord(record: record)
             delegate?.reload()
@@ -334,8 +339,8 @@ class AddInfoViewController: UIViewController , UITextViewDelegate , addInfo{
             }
         }
         if boo {
-            if self.contactTextView.text == "" {
-                self.contactTextView.becomeFirstResponder()
+            if self.contactTextField.text == "" {
+                self.contactTextField.becomeFirstResponder()
                 self.dismissAllFormView()
             } else if self.memoTextView.text == "" {
                 self.memoTextView.becomeFirstResponder()
@@ -349,6 +354,7 @@ class AddInfoViewController: UIViewController , UITextViewDelegate , addInfo{
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.dismissAllFormView()
+        print(contactTextField.text!)
     }
     
     

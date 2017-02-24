@@ -26,6 +26,7 @@
 		024E7FD41E5B295B003A7E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 024E7FD31E5B295B003A7E60 /* Assets.xcassets */; };
 		024E7FD71E5B295B003A7E60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024E7FD51E5B295B003A7E60 /* LaunchScreen.storyboard */; };
 		0292CAEC1E5E872000B5496B /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292CAEB1E5E872000B5496B /* ExtensionString.swift */; };
+		0292CAF41E5F4A7800B5496B /* MultiAutoCompleteTextSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292CAF31E5F4A7800B5496B /* MultiAutoCompleteTextSwift.swift */; };
 		02B533101E5D672A00C1195C /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5330F1E5D672A00C1195C /* ExtensionUIViewController.swift */; };
 		02B533141E5D751B00C1195C /* FormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B533131E5D751B00C1195C /* FormView.xib */; };
 		02B533161E5D7BF600C1195C /* SpecialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B533151E5D7BF600C1195C /* SpecialView.xib */; };
@@ -58,6 +59,7 @@
 		024E7FD61E5B295B003A7E60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		024E7FD81E5B295B003A7E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0292CAEB1E5E872000B5496B /* ExtensionString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
+		0292CAF31E5F4A7800B5496B /* MultiAutoCompleteTextSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiAutoCompleteTextSwift.swift; sourceTree = "<group>"; };
 		02B5330F1E5D672A00C1195C /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
 		02B533131E5D751B00C1195C /* FormView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormView.xib; sourceTree = "<group>"; };
 		02B533151E5D7BF600C1195C /* SpecialView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialView.xib; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		023AF6071E5B30CA003C3EDC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0292CAF31E5F4A7800B5496B /* MultiAutoCompleteTextSwift.swift */,
 				023AF6151E5C43A3003C3EDC /* ExtensionUIView.swift */,
 				023AF6191E5C8761003C3EDC /* ExtensionUIColor.swift */,
 				02B5330F1E5D672A00C1195C /* ExtensionUIViewController.swift */,
@@ -318,6 +321,7 @@
 				024E7FCD1E5B295B003A7E60 /* AppDelegate.swift in Sources */,
 				0292CAEC1E5E872000B5496B /* ExtensionString.swift in Sources */,
 				023AF61E1E5C8F0E003C3EDC /* TypeView.swift in Sources */,
+				0292CAF41E5F4A7800B5496B /* MultiAutoCompleteTextSwift.swift in Sources */,
 				023AF61A1E5C8761003C3EDC /* ExtensionUIColor.swift in Sources */,
 				0208D3C01E5EC19E00DEE5A6 /* HeaderSectionView.swift in Sources */,
 				0208D3C21E5EDD9C00DEE5A6 /* DetailTableViewCell.swift in Sources */,

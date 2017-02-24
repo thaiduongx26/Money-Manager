@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -419,27 +419,6 @@
                                 <rect key="frame" x="0.0" y="108" width="75" height="167"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qw9-pl-FU2">
-                                <rect key="frame" x="80" y="108" width="295" height="167"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-Sq-x6F">
-                                        <rect key="frame" x="5" y="133.5" width="285" height="33.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="awv-gq-fbI" id="26H-Of-zrb"/>
-                                        </connections>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="ycb-Sq-x6F" secondAttribute="bottom" id="3kY-EF-tME"/>
-                                    <constraint firstAttribute="trailing" secondItem="ycb-Sq-x6F" secondAttribute="trailing" constant="5" id="UvT-EC-yNY"/>
-                                    <constraint firstItem="ycb-Sq-x6F" firstAttribute="height" secondItem="qw9-pl-FU2" secondAttribute="height" multiplier="1/5" id="Z5R-i2-ouy"/>
-                                    <constraint firstItem="ycb-Sq-x6F" firstAttribute="leading" secondItem="qw9-pl-FU2" secondAttribute="leading" constant="5" id="wDx-cG-002"/>
-                                </constraints>
-                            </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="wEW-Tl-q7F">
                                 <rect key="frame" x="0.0" y="283" width="375" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -474,6 +453,19 @@
                                     <action selector="continueButtonDidTap:" destination="awv-gq-fbI" eventType="touchUpInside" id="MUD-mk-eDU"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qw9-pl-FU2">
+                                <rect key="frame" x="80" y="108" width="295" height="167"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ih0-hE-cO8" customClass="MultiAutoCompleteTextField" customModule="Money_Manager" customModuleProvider="target">
+                                <rect key="frame" x="80" y="241.5" width="295" height="33.5"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="awv-gq-fbI" id="9WW-9V-PhA"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -481,19 +473,23 @@
                             <constraint firstItem="tfw-Tp-2kR" firstAttribute="height" secondItem="sbd-49-x7P" secondAttribute="height" multiplier="1/4" id="4rJ-WV-ftq"/>
                             <constraint firstItem="tZM-fY-zT7" firstAttribute="top" secondItem="wEW-Tl-q7F" secondAttribute="bottom" constant="20" id="9ny-Fb-HV4"/>
                             <constraint firstItem="tfw-Tp-2kR" firstAttribute="width" secondItem="sbd-49-x7P" secondAttribute="width" multiplier="1/5" id="AiQ-WF-xNQ"/>
+                            <constraint firstItem="ih0-hE-cO8" firstAttribute="bottom" secondItem="qw9-pl-FU2" secondAttribute="bottom" id="AwL-fy-wn7"/>
                             <constraint firstItem="VPU-di-bXO" firstAttribute="top" secondItem="wEW-Tl-q7F" secondAttribute="bottom" constant="20" id="CFD-sF-51L"/>
                             <constraint firstItem="qw9-pl-FU2" firstAttribute="leading" secondItem="tfw-Tp-2kR" secondAttribute="trailing" constant="5" id="DTs-Bp-ISi"/>
                             <constraint firstItem="wEW-Tl-q7F" firstAttribute="leading" secondItem="sbd-49-x7P" secondAttribute="leading" id="E6Z-4g-6LA"/>
                             <constraint firstItem="qw9-pl-FU2" firstAttribute="top" secondItem="9eX-qA-DZy" secondAttribute="bottom" constant="5" id="FnW-Eg-pyF"/>
                             <constraint firstItem="tZM-fY-zT7" firstAttribute="leading" secondItem="sbd-49-x7P" secondAttribute="leading" constant="5" id="H1k-59-0Kd"/>
                             <constraint firstAttribute="trailing" secondItem="tfw-Tp-2kR" secondAttribute="trailing" id="Khd-lU-Hq3"/>
+                            <constraint firstItem="ih0-hE-cO8" firstAttribute="height" secondItem="qw9-pl-FU2" secondAttribute="height" multiplier="1/5" id="L4x-Zs-lTP"/>
                             <constraint firstItem="N6R-K4-JHq" firstAttribute="height" secondItem="sbd-49-x7P" secondAttribute="height" multiplier="1/15" id="LqF-kS-yH0"/>
                             <constraint firstItem="N6R-K4-JHq" firstAttribute="top" secondItem="ZC5-21-KLN" secondAttribute="bottom" id="LvQ-kV-Mjl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qw9-pl-FU2" secondAttribute="trailing" id="OXH-F3-Rh1"/>
+                            <constraint firstItem="ih0-hE-cO8" firstAttribute="width" secondItem="qw9-pl-FU2" secondAttribute="width" id="S7o-Ju-hbQ"/>
                             <constraint firstAttribute="trailing" secondItem="wEW-Tl-q7F" secondAttribute="trailing" id="Upp-gq-jQh"/>
                             <constraint firstItem="qw9-pl-FU2" firstAttribute="height" secondItem="tfw-Tp-2kR" secondAttribute="height" id="VSv-rY-9sv"/>
                             <constraint firstAttribute="trailing" secondItem="N6R-K4-JHq" secondAttribute="trailing" id="bRD-U8-ZJX"/>
                             <constraint firstItem="N6R-K4-JHq" firstAttribute="leading" secondItem="sbd-49-x7P" secondAttribute="leading" id="dHd-oQ-FYo"/>
+                            <constraint firstItem="ih0-hE-cO8" firstAttribute="leading" secondItem="qw9-pl-FU2" secondAttribute="leading" id="dft-cZ-5wi"/>
                             <constraint firstItem="tfw-Tp-2kR" firstAttribute="top" secondItem="9eX-qA-DZy" secondAttribute="bottom" constant="5" id="emN-Nv-B3w"/>
                             <constraint firstItem="wEW-Tl-q7F" firstAttribute="top" secondItem="tfw-Tp-2kR" secondAttribute="bottom" constant="8" id="gbJ-Wj-r8X"/>
                             <constraint firstItem="9eX-qA-DZy" firstAttribute="height" secondItem="sbd-49-x7P" secondAttribute="height" multiplier="1/20" id="hg3-oX-L4H"/>
@@ -513,7 +509,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="contactTextView" destination="ycb-Sq-x6F" id="ayO-N7-JnY"/>
+                        <outlet property="contactTextField" destination="ih0-hE-cO8" id="Ww6-fw-BqL"/>
                         <outlet property="formView" destination="qw9-pl-FU2" id="rm2-HQ-K2p"/>
                         <outlet property="lblTitle" destination="Kr5-uR-pjY" id="x34-yh-341"/>
                         <outlet property="memoTextView" destination="wEW-Tl-q7F" id="exQ-JU-SWZ"/>
