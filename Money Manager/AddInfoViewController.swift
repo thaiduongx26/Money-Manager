@@ -82,10 +82,6 @@ class AddInfoViewController: UIViewController , UITextViewDelegate , addInfo{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.setNeedsDisplay()
-        
-        
-        
-        self.hideKeyboardWhenTappedAround()
         self.setupBase()
         self.setupViewToShow()
         self.memoTextView.textColor = UIColor.gray
@@ -93,7 +89,7 @@ class AddInfoViewController: UIViewController , UITextViewDelegate , addInfo{
         self.memoTextView.font = UIFont.systemFont(ofSize: 11)
         self.contactTextField.font = UIFont.systemFont(ofSize: 11)
         self.continueForm()
-        let word = ["ngoc","duong","fuck"]
+        let word = DB.share().getContent()
         contactTextField.autoCompleteStrings = word
         // Do any additional setup after loading the view.
     }
@@ -310,6 +306,11 @@ class AddInfoViewController: UIViewController , UITextViewDelegate , addInfo{
             record.category = arrFormView[2].lblTitle.text!
             record.amount = arrFormView[3].lblTitle.text!
             record.content = self.contactTextField.text!
+            if self.contactTextField.text != "" {
+                let content = Content()
+                content.content = self.contactTextField.text
+                DB.share().saveContent(content: content)
+            }
             record.memo = self.memoTextView.text!
             DB.share().saveRecord(record: record)
             delegate?.reload()
@@ -367,5 +368,7 @@ class AddInfoViewController: UIViewController , UITextViewDelegate , addInfo{
         }
         return boo
     }
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }

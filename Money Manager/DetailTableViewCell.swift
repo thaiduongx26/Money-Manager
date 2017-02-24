@@ -28,5 +28,15 @@ class DetailTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    func setup1(){
+        self.lblCategory.textColor = UIColor.gray
+        self.lblContent.textColor = UIColor.black
+        self.lblMoney.textColor = UIColor.gray
+        self.lblAccount.textColor = UIColor.gray
+    }
+    func setup2(){
+        self.lblCategory.textColor = UIColor.gray
+        self.lblMoney.textColor = UIColor.gray
+        self.lblAccount.textColor = UIColor.gray
+    }
 }

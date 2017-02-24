@@ -21,10 +21,7 @@ class HeaderSectionView: UIView {
     @IBOutlet var lblIncome: UILabel!
     
     func setup(){
-//        lblDay.font = lblDay.fontToFitHeight()
-//        lblDate.font = lblDate.fontToFitHeight()
-//        lblDayInWeek.font = lblDayInWeek.fontToFitHeight()
-//        lblDay.sizeToFit()
+        lblDate.textColor = UIColor.gray
     }
     
     

@@ -67,6 +67,13 @@ class DB {
             realm.add(type)
         }
     }
+    
+    func saveContent(content:Content){
+        try! realm.write {
+            realm.add(content)
+        }
+    }
+    
     func saveDay(day : Day){
         try! realm.write {
             realm.add(day)
@@ -75,6 +82,15 @@ class DB {
     
     func getAcc() -> Results<Account>{
         return realm.objects(Account.self)
+    }
+    
+    func getContent() -> Array<String> {
+        let content = realm.objects(Content.self)
+        var arr : Array<String>! = []
+        for cont in content{
+            arr.append(cont.content)
+        }
+        return arr
     }
     
     func getType() -> Results<Type>{

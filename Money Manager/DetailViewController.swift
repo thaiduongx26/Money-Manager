@@ -14,9 +14,15 @@ class DetailViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     internal func reload(){
         dataDay = DB.share().getDay()
         tableDataView.reloadData()
-        print(3333)
+        setupTitle()
     }
     @IBOutlet var switchView: UIView!
+    
+    @IBOutlet var lblIncome: UILabel!
+    
+    @IBOutlet var lblExpense: UILabel!
+    
+    @IBOutlet var lblTotal: UILabel!
     
     @IBOutlet var tableDataView: UITableView!
     
@@ -32,7 +38,7 @@ class DetailViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         print(dataDay)
         print(DB.share().getRecord())
         super.viewDidLoad()
-        
+        setupTitle()
         print(self.getDayOfWeek("2/27/2017")!)
         view.setNeedsLayout()
         view.layoutIfNeeded()
@@ -45,6 +51,24 @@ class DetailViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupTitle(){
+        let income = DB.share().getRecordWithType(type: "Income")
+        let expense = DB.share().getRecordWithType(type: "Expense")
+        var moneyIncome : Float = 0.00
+        var moneyExpense : Float = 0.00
+        for i in income {
+            moneyIncome += Float(i.amount)!
+        }
+        for i in expense {
+            moneyExpense += Float(i.amount)!
+        }
+        let total : Float = moneyIncome - moneyExpense
+        self.lblTotal.text = "$" + total.format(f: ".2")
+        self.lblTotal.textColor = UIColor.gray
+        self.lblIncome.text = "$" + moneyIncome.format(f: ".2")
+        self.lblExpense.text = "$" + moneyExpense.format(f: ".2")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,18 +95,31 @@ class DetailViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! DetailTableViewCell
             cell.lblCategory.text = dataCell.category
             cell.lblAccount.text = dataCell.account
-            cell.lblMoney.text = dataCell.amount
+            cell.lblMoney.text = "$" + dataCell.amount
+            cell.setup2()
+            if dataCell.name == "Income" {
+                cell.lblMoney.textColor = UIColor.hexStringToUIColor(hex: "007BED")
+            } else {
+                cell.lblMoney.textColor = UIColor.hexStringToUIColor(hex: "FF1214")
+            }
+            
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! DetailTableViewCell
             cell.lblCategory.text = dataCell.category
             cell.lblAccount.text = dataCell.account
-            cell.lblMoney.text = dataCell.amount
+            cell.lblMoney.text = "$" + dataCell.amount
             cell.lblContent.text = dataCell.content
+            cell.setup1()
+            if dataCell.name == "Income" {
+                cell.lblMoney.textColor = UIColor.hexStringToUIColor(hex: "007BED")
+            } else {
+                cell.lblMoney.textColor = UIColor.hexStringToUIColor(hex: "FF1214")
+            }
         }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 35
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let date = dataDay[section].day!
@@ -117,9 +154,12 @@ class DetailViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         for data in dataExpense {
             moneyExpense = moneyExpense + Float(data.amount)!
         }
-        view1.lblIncome.text = String(moneyIncome)
-        view1.lblExpense.text = String(format:"%2f",moneyExpense)
-        view1.frame.origin = CGPoint(x: 0, y: 0)
+        view1.lblIncome.text = "$"+moneyIncome.format(f: ".2")
+        view1.lblIncome.textColor = UIColor.hexStringToUIColor(hex: "007BED")
+        view1.lblExpense.text = "$"+moneyExpense.format(f: ".2")
+        view1.lblExpense.textColor = UIColor.hexStringToUIColor(hex: "FF1214")
+        
+        //view1.frame.origin = CGPoint(x: 0, y: 0)
         //view1.frame.size = CGSize(width: 20, height: 10)
         //print(tableView.estimatedSectionHeaderHeight)
         view1.setup()
@@ -127,7 +167,7 @@ class DetailViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 5
+        return 10
     }
     
     func setupEmptyBackgroundView() {
