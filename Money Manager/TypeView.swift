@@ -22,6 +22,10 @@ class TypeView: UIView {
     func someAction(_ sender: UITapGestureRecognizer){
         let vc = self.parentViewController as! AddInfoViewController
         var color : String!
+        vc.categoryIncomeView.close()
+        vc.accountView.close()
+        vc.categoryExpenseView.close()
+        vc.amountView.close()
         for type in vc.type {
             if lblTitle.text == type {
                 color = vc.color[type]!
@@ -34,7 +38,7 @@ class TypeView: UIView {
                 view.normal()
             }
         }
-        
+        vc.continueForm()
     }
     
     func tapAction(_ sender:UITapGestureRecognizer){
